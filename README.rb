@@ -1,0 +1,1 @@
+The game of ROCK, PAPER, SCISSORS, LIZARD, SPOCK.  As defined by the show Big Bang Theory.
