@@ -13,18 +13,18 @@ end
 
 get('/throw/:choice') do
   # make other choice, see who won, etc.
-  p_throw = params[:choice].to_sym
-  c_throw = DEFEATS.keys.sample
+  player_throw   = params[:choice].to_sym
+  computer_throw = DEFEATS.keys.sample
   
-  if p_throw == c_throw
-    result = "tie"
-  elsif DEFEATS[p_throw].include? c_throw
+  if player_throw == computer_throw
+    result = "a tie"
+  elsif DEFEATS[player_throw].include? computer_throw
     result = "player wins"
   else
     result = "computer wins"
   end
   
-  erb :outcome, locals: { p_throw: p_throw,
-                          c_throw: c_throw,
-                          result:  result }
+  erb :outcome, locals: { player_throw:   player_throw,
+                          computer_throw: computer_throw,
+                          result:         result }
 end
